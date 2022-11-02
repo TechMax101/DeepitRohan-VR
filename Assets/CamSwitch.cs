@@ -9,6 +9,8 @@ public class CamSwitch : MonoBehaviour
 
     public GameObject MainCam;
 
+    public GameObject firstPersonCam;
+
     // public GameObject cam1;
 
     // Start is called before the first frame update
@@ -16,6 +18,7 @@ public class CamSwitch : MonoBehaviour
     {
         playerCam.SetActive(false);
         MainCam.SetActive(true);
+        firstPersonCam.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,11 +27,19 @@ public class CamSwitch : MonoBehaviour
         if (Input.GetButtonDown("Switch1")) {
             playerCam.SetActive(true);
             MainCam.SetActive(false);
+            firstPersonCam.SetActive(false);
         }
         
         if (Input.GetButtonDown("Switch2")) {
             playerCam.SetActive(false);
             MainCam.SetActive(true);
+            firstPersonCam.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("Switch3")) {
+            playerCam.SetActive(false);
+            MainCam.SetActive(false);
+            firstPersonCam.SetActive(true);
         }
     }
 }
